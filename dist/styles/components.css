@@ -173,7 +173,9 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
  .selector-row,.about-nav { margin-bottom: var(--space-6); }
  .hero-layout,.project,.about-story,.editorial-section,.case-glance,.case-meta,.planet-grid { grid-template-columns: 1fr; }
  .hero-support { margin-top: var(--space-5); }
- .hero-portrait { max-width: 360px; width: 100%; padding-top: var(--space-2); justify-self: start; }
+ .hero-portrait { max-width: none; width: 100%; padding-top: var(--space-2); justify-self: stretch; }
+ .hero-portrait .media,
+ .hero-portrait .illustration { width: 100%; }
  .media--hero { aspect-ratio: 1.15; }
  .project { --ratio-project: 1.24; gap: var(--space-5); }
  .project-company { margin-bottom: var(--space-3); }
@@ -352,7 +354,7 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
  .planet-card > .illustration, .planet-card > .media { aspect-ratio: 1.6; }
  .photo-grid,.photo-column { gap: 12px; }
  .resume-actions { gap: var(--space-5); }
- .hero-portrait { max-width: 380px; }
+ .hero-portrait { max-width: none; }
 }
 @media(max-width:380px) { .header-actions { gap: 5px; } .navigation { gap: 12px; } .brand { font-size: 26px; } .site-header { gap: 12px; } .header-actions .navigation a { font-size: 14px; } }
 
@@ -363,6 +365,10 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 .planet-why-photo figcaption { flex: 0 0 auto; margin-top: var(--space-3); }
 @media (max-width: 700px) {
  .outside-section .editorial-copy { grid-template-columns: 1fr; }
+ .outside-section .outside-text { display: contents; }
+ .outside-section .outside-text > p { order: 1; }
+ .outside-section .story-interlude { order: 2; }
+ .outside-section .related-links { order: 3; }
  .outside-section .story-interlude { margin-top: var(--space-6); }
  .planet-why-photo { height: auto; }
  .planet-why-photo img { flex: none; height: auto; aspect-ratio: 4 / 3; }
