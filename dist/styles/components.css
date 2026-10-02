@@ -38,10 +38,10 @@
 .media--project { aspect-ratio: var(--ratio-project); background: var(--color-project-media); }
 .project--lavender .media--project { background: var(--color-project-lavender); }
 
-.section-description { text-align: right; }
+.section-description { margin-top: var(--space-2); text-align: left; }
 
 /* Open editorial project rows; no tinted text cards or fixed row heights. */
-.section-heading { display: flex; justify-content: space-between; align-items: baseline; gap: var(--space-5); padding-bottom: var(--space-6); border-bottom: var(--border-width) solid var(--color-border); }
+.section-heading { display: block; padding-top: var(--space-5); border-top: var(--border-width) solid var(--color-border); }
 .project-list { display: grid; grid-auto-rows: 1fr; gap: var(--space-9); margin-top: var(--space-7); }
 .project { display: grid; grid-template-columns: minmax(0,1.18fr) minmax(0,1fr); gap: var(--gap-column); align-items: stretch; }
 /* The tallest details block sets every desktop row; media fills that row. */
@@ -79,7 +79,7 @@
 .personal-quote p,.reference blockquote { font-family: var(--font-body); font-size: var(--size-quote); font-weight: var(--weight-medium); color: var(--color-text-primary); line-height: var(--line-quote); letter-spacing: var(--tracking-opening); }
 .personal-quote cite { display: block; margin-top: var(--space-3); font-size: var(--size-caption); font-style: normal; color: var(--color-text-muted); }
 .editorial-section { display: block; }
-.editorial-heading,.outside-heading { padding-bottom: var(--space-5); border-bottom: var(--border-width) solid var(--color-border); margin-bottom: var(--space-6); }
+.editorial-heading,.outside-heading { padding-top: var(--space-5); border-top: var(--border-width) solid var(--color-border); margin-bottom: var(--space-6); }
 .editorial-copy { max-width: var(--reading-width); }
 .outside-section { margin-top: var(--gap-section); }
 .outside-heading .media { margin-top: var(--space-7); }
@@ -176,8 +176,6 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
  .hero-portrait { max-width: 360px; width: 100%; padding-top: var(--space-2); justify-self: start; }
  .media--hero { aspect-ratio: 1.15; }
  .project { --ratio-project: 1.24; gap: var(--space-5); }
- .section-heading--described { flex-direction: column; align-items: flex-start; gap: var(--space-2); }
- .section-description { text-align: left; }
  .project-company { margin-bottom: var(--space-3); }
  .project-description { font-size: var(--size-body); }
  .project-action { margin-top: var(--space-4); }
@@ -280,7 +278,6 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 
 /* Experience headers follow the table during normal page scrolling. */
 .page-heading { margin-bottom: var(--space-8); }
-.experience-section > .section-heading { padding-bottom: var(--space-5); }
 .experience-section > .section-heading h1 { font-family: var(--font-heading); font-size: var(--size-heading); line-height: var(--line-heading); font-weight: var(--weight-heading); letter-spacing: var(--tracking-heading); }
 .experience-table { margin-top: var(--space-5); }
 .experience-table table { margin: 0; }
