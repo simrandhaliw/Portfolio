@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title">
+  <title id="title">Coral research, hand drawn</title>
+  <g fill="none" stroke="#25332f" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="151" y="94" width="418" height="304" rx="12" stroke-width="4" stroke-dasharray="18 10"/>
+    <path d="M194 350c70-9 137-7 201 2 54 7 105 8 142-2M215 367c31-5 52-6 76-3m149 2c26-4 47-3 73-1" stroke-width="3"/>
+    <g stroke="#a86c68" stroke-width="20">
+      <path d="M315 346c-2-34 2-70 7-100m-1 46c-19-24-34-44-51-54m52 28c14-25 28-43 46-60m-48 76c19-19 34-30 56-36"/>
+      <path d="M434 350c-6-25-11-53-10-77m1 49c-17-19-28-31-40-38m42 15c12-18 23-29 35-36" stroke-width="15"/>
+    </g>
+    <g stroke="#25332f" stroke-width="3.5">
+      <path d="M315 346c-2-34 2-70 7-100m-1 46c-19-24-34-44-51-54m52 28c14-25 28-43 46-60m-48 76c19-19 34-30 56-36"/>
+      <path d="M434 350c-6-25-11-53-10-77m1 49c-17-19-28-31-40-38m42 15c12-18 23-29 35-36"/>
+      <path d="M273 237c-7-18-12-29-21-39m18 42-23-4m121-31 8-29m-7 28 23-10m-16 53 16-19m-7 56-10-20m77-3 7-18m-73 38-13-13"/>
+      <circle cx="238" cy="185" r="3"/><circle cx="383" cy="168" r="3"/><circle cx="406" cy="218" r="3"/>
+    </g>
+    <path d="M226 345c8-30 19-52 32-66-3 30-8 50-18 69m244 0c8-31 18-50 31-65-3 28-9 49-18 66" fill="#c7dbd1" stroke-width="3"/>
+    <path d="M248 347c-13-22-25-35-37-42 4 20 11 32 22 43m260 1c-9-19-18-29-30-36 3 18 8 28 19 36" fill="#c7dbd1" stroke-width="3"/>
+    <circle cx="522" cy="184" r="40" fill="#e8f2ef" stroke-width="4"/>
+    <path d="m551 212 31 32M506 171c7-9 17-14 28-14" stroke-width="5"/>
+    <path d="M250 158c21-18 48-18 68 0-20 17-47 18-68 0Zm2 0-17-13v26l17-13Zm39-5 2 1" stroke-width="3"/>
+    <circle cx="206" cy="158" r="5" stroke-width="3"/><circle cx="224" cy="131" r="3" stroke-width="3"/>
+    <circle cx="472" cy="214" r="5" stroke-width="3"/><circle cx="483" cy="193" r="3" stroke-width="3"/>
+  </g>
+</svg>

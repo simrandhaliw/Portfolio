@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title desc">
+<title id="title">UX at the intersection</title><desc id="desc">Three hand-drawn circles: technology and feasibility, user and desirability, business and viability. UX is in their shared center.</desc>
+<rect width="720" height="500" fill="#fbfaf7"/>
+<!-- Slightly irregular outlines give the diagram the same hand-drawn feel as its companion. -->
+<g stroke="#26332f" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M353 51c77-3 146 55 151 132 6 77-51 143-127 153-80 11-149-42-160-120-12-79 43-151 119-163 6-1 12-2 17-2z" fill="#cde9ee" fill-opacity=".52"/>
+ <path d="M265 188c76-3 142 51 151 126 10 78-42 149-118 160-78 11-150-41-160-117-11-82 45-158 127-169z" fill="#dcebe2" fill-opacity=".56"/>
+ <path d="M449 189c78-6 149 49 158 125 10 79-45 150-122 160-80 10-150-42-159-119-11-81 42-153 123-166z" fill="#eee3d4" fill-opacity=".56"/>
+</g>
+<defs>
+ <clipPath id="overlap-1" clipPathUnits="userSpaceOnUse"><path d="M353 51c77-3 146 55 151 132 6 77-51 143-127 153-80 11-149-42-160-120-12-79 43-151 119-163 6-1 12-2 17-2z"/></clipPath>
+ <clipPath id="overlap-2" clipPathUnits="userSpaceOnUse"><path d="M265 188c76-3 142 51 151 126 10 78-42 149-118 160-78 11-150-41-160-117-11-82 45-158 127-169z"/></clipPath>
+ <clipPath id="overlap-3" clipPathUnits="userSpaceOnUse"><path d="M449 189c78-6 149 49 158 125 10 79-45 150-122 160-80 10-150-42-159-119-11-81 42-153 123-166z"/></clipPath>
+</defs>
+<!-- Clip the yellow fill to the exact area shared by all three circles. -->
+<g clip-path="url(#overlap-1)"><g clip-path="url(#overlap-2)"><g clip-path="url(#overlap-3)"><rect x="0" y="0" width="720" height="500" fill="#f2bc55"/></g></g></g>
+<g fill="none" stroke="#26332f" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round">
+ <path d="M353 51c77-3 146 55 151 132 6 77-51 143-127 153-80 11-149-42-160-120-12-79 43-151 119-163 6-1 12-2 17-2z"/>
+ <path d="M265 188c76-3 142 51 151 126 10 78-42 149-118 160-78 11-150-41-160-117-11-82 45-158 127-169z"/>
+ <path d="M449 189c78-6 149 49 158 125 10 79-45 150-122 160-80 10-150-42-159-119-11-81 42-153 123-166z"/>
+</g>
+<g font-family="Chalkboard SE, Bradley Hand, Comic Sans MS, cursive" fill="#24312e" text-anchor="middle">
+ <text x="360" y="134" font-size="31" transform="rotate(-2 360 134)">Technology</text>
+ <text x="360" y="167" font-size="21">(Feasibility)</text>
+ <text x="214" y="352" font-size="31" transform="rotate(-2 214 352)">User</text>
+ <text x="214" y="382" font-size="21">(Desirability)</text>
+ <text x="516" y="352" font-size="31" transform="rotate(2 516 352)">Business</text>
+ <text x="516" y="382" font-size="21">(Viability)</text>
+ <text x="369" y="305" font-size="31" font-weight="700" fill="#753b2e">UX</text>
+</g>
+</svg>

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title">
+  <title id="title">Digital sustainability, hand drawn</title>
+  <g fill="none" stroke="#e3eee5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M220 300c-35-5-58-31-58-64 0-35 27-63 62-66 11-45 52-77 100-77 46 0 83 27 99 65 10-5 23-8 36-8 43 0 79 32 83 73 27 11 44 34 44 62 0 38-29 66-70 66H235"/>
+    <path d="M255 309V190l25-23h112v157M280 167v27h-25M288 222h72M288 245h59M288 268h69"/>
+    <path d="M340 342c-16-50 2-94 47-126 2 50-8 92-47 126Zm-2 2c4-34 19-67 44-98" fill="#9fcb99"/>
+    <path d="M390 350h102M421 326h71M448 303h44"/>
+    <path d="m160 132-12-12m7 40-17 3m427-22 14-15m-3 40 18 2" stroke-width="3"/>
+  </g>
+</svg>

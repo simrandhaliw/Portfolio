@@ -1,0 +1,21 @@
+@font-face { font-family: "Instrument Sans"; font-style: normal; font-weight: 400 700; font-display: swap; src: url('../assets/fonts/instrument-sans-latin-variable.woff2') format('woff2'); }
+@font-face { font-family: "Geist"; font-style: normal; font-weight: 100 900; font-display: swap; src: url('../assets/fonts/geist-latin-variable.woff2') format('woff2'); }
+body { font-family: var(--font-body); font-size: var(--size-body); font-weight: var(--weight-body); line-height: var(--line-body); letter-spacing: var(--tracking-body); color: var(--color-text-primary); -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4,p,figure,blockquote,dl,dd { margin: 0; }
+h1,h2,h3,h4 { text-wrap: balance; color: var(--color-text-primary); }
+h1 { font-family: var(--font-display); font-size: var(--size-title); line-height: var(--line-title); font-weight: var(--weight-heading); letter-spacing: var(--tracking-title); }
+h2 { font-family: var(--font-heading); font-size: var(--size-heading); line-height: var(--line-heading); font-weight: var(--weight-heading); letter-spacing: var(--tracking-heading); }
+h3,h4 { font-family: var(--font-subheading); font-size: var(--size-subheading); line-height: var(--line-heading); font-weight: var(--weight-heading); letter-spacing: var(--tracking-heading); }
+p + p { margin-top: var(--gap-paragraph); }
+a { color: var(--color-link); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:is(:hover,:focus-visible) { color: var(--color-link-hover); }
+button,nav { font-family: var(--font-ui); }
+button { font-size: inherit; }
+strong { font-weight: var(--weight-strong); }
+.label { font-family: var(--font-caption); font-size: var(--size-label); font-weight: var(--weight-medium); line-height: 1.5; color: var(--color-text-muted); text-transform: uppercase; letter-spacing: .09em; }
+.caption { font-family: var(--font-caption); font-size: var(--size-caption); color: var(--color-text-muted); line-height: 1.5; }
+.prose { color: var(--color-text-secondary); }
+.prose h2,.prose h3 { color: var(--color-text-primary); margin-bottom: var(--space-5); }
+.prose h3 { margin-top: var(--space-8); }
+.prose ul,.prose ol { padding-left: var(--space-5); }
+.prose blockquote { border-left: 2px solid var(--color-border-strong); padding-left: var(--space-5); margin-block: var(--space-6); }
