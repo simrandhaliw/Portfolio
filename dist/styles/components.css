@@ -273,7 +273,8 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 .about-quote { max-width: 860px; margin: var(--space-9) auto 0 !important; padding-block: var(--space-6) 0 !important; }
 .approach-sections { margin-top: var(--space-9); }
 .approach-sections .editorial-section + .editorial-section { margin-top: var(--space-9); }
-.story-interlude { margin-block: var(--space-6); }
+.outside-section .editorial-copy { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(0,1fr); gap: var(--gap-column); align-items: start; max-width: none; }
+.outside-section .story-interlude { width: 100%; margin: 0; }
 .outside-heading > .illustration { margin-top: var(--space-7); }
 
 /* Experience headers follow the table during normal page scrolling. */
@@ -357,9 +358,15 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 
 .photo-card, .photo-card .media { border: 0; padding: 0; background: transparent; }
 
-.planet-why-photo { margin: 0; min-width: 0; }
-.planet-why-photo img { display:block; width:100%; max-height:560px; aspect-ratio: 4 / 5; object-fit:cover; border-radius:var(--radius-media); }
-.planet-why-photo figcaption { margin-top:var(--space-3); }
+.planet-why-photo { display: flex; flex-direction: column; height: 100%; min-width: 0; min-height: 0; margin: 0; }
+.planet-why-photo img { display: block; flex: 1 1 0; width: 100%; min-height: 0; height: 0; object-fit: cover; border-radius: var(--radius-media); }
+.planet-why-photo figcaption { flex: 0 0 auto; margin-top: var(--space-3); }
+@media (max-width: 700px) {
+ .outside-section .editorial-copy { grid-template-columns: 1fr; }
+ .outside-section .story-interlude { margin-top: var(--space-6); }
+ .planet-why-photo { height: auto; }
+ .planet-why-photo img { flex: none; height: auto; aspect-ratio: 4 / 3; }
+}
 
 /* Keep the full About photo close to the height of its adjacent paragraph. */
 .story-row:first-child .story-art { max-width: 280px; }
