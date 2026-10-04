@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" role="img" aria-labelledby="title">
+  <title id="title">Climate education, hand drawn</title>
+  <g fill="none" stroke="#e3eee5" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M145 167c69-10 124-8 192 18v212c-62-25-126-29-192-18V167Zm192 18c65-25 127-29 192-18v212c-70-10-130-7-192 18V185Z" fill="#46514a"/>
+    <path d="M337 186v210M164 184c55-7 98-3 151 14m43 0c53-17 102-22 153-16" stroke-width="3"/>
+    <circle cx="246" cy="274" r="47" fill="#95b893"/>
+    <path d="M202 275h88m-44-47c-21 22-21 72 0 92m0-92c21 22 21 72 0 92m-32-76c19 11 44 11 64 0m-64 61c19-11 44-11 64 0" stroke-width="3"/>
+    <circle cx="421" cy="250" r="29" fill="#e8c77a"/>
+    <path d="M421 206v-15m0 118v-15m44-44h15m-118 0h15m75-32 11-11m-84 84 11-11m62 11 11 11m-84-84 11 11" stroke-width="3"/>
+    <path d="M401 330c13-34 40-49 75-48-10 37-34 57-75 48Zm-2 6c18-19 42-34 71-46" fill="#a5c49a"/>
+    <path d="m548 173 65 136-18 9-65-137 18-8Zm65 136 2 20-20-11"/>
+    <path d="M161 415c132 11 274 11 407 0" stroke-width="3"/>
+  </g>
+</svg>

@@ -1,0 +1,176 @@
+:root {
+  /* Change these roles to change the personality of the whole portfolio. */
+  --font-family-primary: "Instrument Sans", Arial, sans-serif;
+  --font-display: var(--font-family-primary);
+  --font-heading: var(--font-family-primary);
+  --font-subheading: var(--font-family-primary);
+  --font-body: var(--font-family-primary);
+  --font-ui: var(--font-family-primary);
+  --font-caption: var(--font-family-primary);
+  --font-mono: ui-monospace, monospace;
+
+  --color-background: #ffffff;
+  --color-surface: #f7f7f5;
+  --color-surface-subtle: #f5f7f8;
+  --color-text-primary: #222321;
+  --color-text-secondary: #555852;
+  --color-text-muted: #62655f;
+  --color-text-inverse: #ffffff;
+  --color-border: #e2e4df;
+  --color-border-strong: #b9bdb4;
+  --color-accent: #1856b8;
+  --color-accent-hover: #103b83;
+  --color-link: var(--color-accent);
+  --color-link-hover: var(--color-accent-hover);
+  --color-focus: #1856b8;
+  --color-placeholder: #e8e9e5;
+  --color-project-media: #e8edef;
+  --color-project-blue: #eef2f4;
+  --color-project-lavender: #efedf3;
+  --color-tag-purple: var(--color-surface);
+  --color-tag-blue: var(--color-surface);
+  --color-tag-peach: var(--color-surface);
+  --color-tag-green: var(--color-surface);
+  --color-tag-teal: var(--color-surface);
+  --color-planet-blue: #f1f6f7;
+  --color-planet-peach: #f8f4f0;
+  --color-planet-green: #f1f6ef;
+
+  --content-max-width: 1360px;
+  --page-padding: clamp(24px, 5vw, 72px);
+  --reading-width: 64ch;
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 40px; --space-8: 48px;
+  --space-9: 64px; --space-10: 80px; --space-11: 96px; --space-12: 120px;
+  --page-top-space: 56px;
+  --gap-paragraph: 20px;
+  --gap-section: 96px;
+  --gap-column: clamp(32px, 5vw, 72px);
+  --header-height: 100px;
+  --masthead-offset: var(--header-height);
+
+  --size-body: 18px;
+  --size-small: 16px;
+  --size-caption: 14px;
+  --size-nav: 15px;
+  --size-action: 16px;
+  --size-footer-action: 14px;
+  --size-footer-icon: 16px;
+  --size-label: 13px;
+  --size-brand: 28px;
+  --size-opening: clamp(1.375rem, 1.8vw, 1.5rem);
+  --size-hero: var(--size-opening);
+  --size-project-title: var(--size-opening);
+  --size-title: clamp(1.75rem, 2.4vw, 2rem);
+  --size-case-title: var(--size-title);
+  --size-heading: clamp(1.375rem, 1.8vw, 1.5rem);
+  --size-subheading: 1.25rem;
+  --size-intro: var(--size-subheading);
+  --size-quote: var(--size-opening);
+  --size-reference-quote: clamp(1.25rem, 1.6vw, 1.375rem);
+  --weight-body: 400;
+  --weight-medium: 500;
+  --weight-heading: 550;
+  --weight-strong: 600;
+  --line-body: 1.65;
+  --line-title: 1.17;
+  --line-heading: 1.3;
+  --line-hero: 1.4;
+  --line-quote: 1.5;
+  --tracking-title: -.035em;
+  --tracking-heading: -.02em;
+  --tracking-opening: -.02em;
+  --tracking-body: -.008em;
+
+  --radius-media: 8px;
+  --radius-tag: 4px;
+  --border-width: 1px;
+  --selected-border-width: 2px;
+  --control-height: 44px;
+  --footer-action-height: 28px;
+  --breakpoint-mobile: 700px;
+  --breakpoint-tablet: 1100px;
+  --transition-fast: 150ms;
+  --transition-standard: 220ms;
+  --motion-easing: ease-out;
+  --hero-portrait-max: 340px;
+  --ratio-hero: .92;
+  --ratio-case-media: 2.8;
+  --ratio-portrait: .8;
+  --ratio-project: 1.24;
+  --case-nav-width: 180px;
+  --case-nav-width-narrow: 170px;
+  --case-nav-height: 64px;
+  --ratio-case-visual: 16 / 9;
+  --project-details-inset: var(--space-6);
+  --experience-table-min-width: 900px;
+  --experience-date-width: 7.5rem;
+  --career-organization-width: 18%;
+  --career-role-width: 20%;
+  --education-university-width: 22%;
+  --education-degree-width: 23%;
+}
+:root.masthead-hidden { --masthead-offset: 0px; }
+/* Query-only comparison override: the default portfolio remains Instrument Sans. */
+:root[data-font="geist"] { --font-family-primary: "Geist", Arial, sans-serif; }
+@media (max-width: 700px) {
+  :root { --gap-section: 64px; --page-top-space: 32px; --header-height: 88px; --gap-column: 32px; }
+}
+
+/* Illustration palette and accessible theme roles. */
+:root {
+  color-scheme: light;
+  --color-tooltip: #222321;
+  --color-tooltip-text: #ffffff;
+  --art-canvas: #f3f4f0;
+  --art-paper: #ffffff;
+  --art-ink: #39473e;
+  --art-blue: #bdd3e2;
+  --art-green: #b9cfb3;
+  --art-peach: #ecd0b6;
+  --art-coral: #b96d59;
+  --color-planet-blue: #eaf1e5;
+  --color-planet-peach: #e8f0f5;
+  --color-planet-green: #f5ebdf;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-background: #171b19;
+  --color-surface: #222825;
+  --color-surface-subtle: #222b29;
+  --color-text-primary: #f0f2ed;
+  --color-text-secondary: #c6ccc4;
+  --color-text-muted: #a9b3a7;
+  --color-border: #3c4740;
+  --color-border-strong: #657266;
+  --color-accent: #94c3ff;
+  --color-accent-hover: #c2dcff;
+  --color-focus: #a9ceff;
+  --color-placeholder: #29332e;
+  --color-project-media: #29333b;
+  --color-project-blue: #27323b;
+  --color-project-lavender: #302e3b;
+  --color-planet-blue: #26362b;
+  --color-planet-peach: #25323b;
+  --color-planet-green: #393129;
+  --color-tooltip: #eef2e9;
+  --color-tooltip-text: #1d251f;
+  --art-canvas: #222b26;
+  --art-paper: #344139;
+  --art-ink: #d8e4d3;
+  --art-blue: #456c83;
+  --art-green: #547b55;
+  --art-peach: #836549;
+  --art-coral: #dc9a82;
+}
+
+/* Product prototype and evidence viewer, scoped through shared theme roles. */
+:root { --demo-label-bg: #ededed; --demo-label-selected: #d9e8ff; --demo-label-text: #124a95; --demo-ready: #306b19; --demo-ready-bg: #f2f9ec; --demo-warning: #573c00; --demo-warning-bg: #ffdf7d; --demo-pending: #49387c; --demo-pending-bg: #e7e0f7;
+  --color-evidence-canvas: #ffffff;
+  --color-dialog-backdrop: #000000cc;
+  --shadow-image-control: 0 2px 8px #00000011;
+  --radius-demo-card: 12px;
+  --size-demo-label: 13px;
+  --size-demo-status: 12px;
+}
+[data-theme="dark"] { --demo-label-bg: #303530; --demo-label-selected: #233f62; --demo-label-text: #b9d8ff; --demo-ready: #c0e1ac; --demo-ready-bg: #223b1c; --demo-warning: #ffdf7d; --demo-warning-bg: #4e3c10; --demo-pending: #e0d3ff; --demo-pending-bg: #39304e; }
