@@ -62,3 +62,27 @@ for(const demo of document.querySelectorAll('[data-governance-demo]')){
  });
  render();
 }
+
+const imageDialog=document.querySelector('.case-image-dialog');
+if(imageDialog){
+ let opener;
+ document.addEventListener('click',event=>{
+  const link=event.target.closest('[data-case-image]');
+  if(!link||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
+  event.preventDefault();opener=link;
+  const item=link.closest('.case-evidence-item');
+  const image=link.querySelector('img');
+  imageDialog.querySelector('#case-image-title').textContent=item.querySelector('.case-evidence-label').textContent;
+  const full=imageDialog.querySelector('.case-image-viewport img');full.src=link.href;full.alt=image.alt;
+  const legend=imageDialog.querySelector('.case-image-legend');legend.replaceChildren();
+  const notes=item.querySelector('.case-image-notes,.case-evidence-description');
+  if(notes)legend.append(notes.cloneNode(true));
+  legend.hidden=!notes;
+  imageDialog.showModal();
+  imageDialog.querySelector('.case-image-viewport').scrollTop=0;
+  document.documentElement.classList.add('case-image-open');
+ });
+ imageDialog.querySelector('.case-close-button').addEventListener('click',()=>imageDialog.close());
+ imageDialog.addEventListener('click',event=>{if(event.target===imageDialog)imageDialog.close();});
+ imageDialog.addEventListener('close',()=>{document.documentElement.classList.remove('case-image-open');opener?.focus({preventScroll:true});});
+}

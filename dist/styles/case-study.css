@@ -255,3 +255,21 @@
  .demo-resource-body[hidden],.demo-lanes[hidden] { display: block !important; }
  .demo-lane-header button,.demo-row-toggle,.demo-reset { display: none; }
 }
+
+/* The original access map includes three worked callability checks. */
+.concept-callability { margin-top: var(--space-5); }
+.concept-callability > h3 { font-size: var(--size-subheading); margin-bottom: var(--space-4); }
+.concept-checks { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-3); }
+.concept-checks ol { padding-left: 1.2em; display: grid; gap: var(--space-3); }
+.concept-checks li span { display: block; color: var(--color-text-primary); margin-top: var(--space-1); }
+.concept-checks .concept-result { border-top: 1px solid var(--color-border); margin-top: var(--space-4); padding-top: var(--space-3); color: var(--color-text-primary); font-weight: var(--weight-medium); }
+.case-figure--evidence { padding: 0; border: 0; background: transparent; }
+.case-figure--evidence .case-evidence-item video { aspect-ratio: auto; }
+.case-evidence-grid > .case-evidence-item + .case-evidence-item { margin-top: var(--space-3); }
+.case-evidence-grid--paired > .case-evidence-item + .case-evidence-item { margin-top: 0; }
+.case-image-viewport img { height: auto; object-fit: contain; }
+.case-close-button { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+.case-close-button:hover { background: var(--color-surface); }
+@media (max-width: 700px) { .concept-checks { grid-template-columns: 1fr; } }
+html.case-image-open { overflow: hidden; }
+.case-image-link--board img { max-height: 520px; object-fit: contain; background: #fff; }
