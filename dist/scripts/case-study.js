@@ -90,33 +90,49 @@ if(imageDialog){
 const callability=document.querySelector('.concept-callability');
 if(callability){
  const checks=[...callability.querySelectorAll('.concept-map-card')];
+ const sections=[...callability.closest('.case-concept').querySelectorAll('.concept-map > .concept-map-section')];
  const scenarios=[
   {model:'Granite-3B',group:'data-science',policy:'Policy A',subscription:'Subscription 1',available:true},
   {model:'Granite-3B',group:'analytics',policy:'Policy A',subscription:null,available:true},
   {model:'Phi-3',group:'data-science',policy:'Policy A',subscription:'Subscription 1',available:false}
  ];
- const markText=(root,needle,unavailable=false)=>{
+ const highlight=(root,needle,kind)=>{
+  if(!root)return;
   const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT);const nodes=[];
-  while(walker.nextNode()) if(walker.currentNode.nodeValue.includes(needle))nodes.push(walker.currentNode);
-  nodes.forEach(node=>{const parts=node.nodeValue.split(needle);const frag=document.createDocumentFragment();parts.forEach((part,i)=>{if(part)frag.append(document.createTextNode(part));if(i<parts.length-1){const mark=document.createElement('mark');if(unavailable)mark.dataset.unavailable='';mark.textContent=needle;frag.append(mark);}});node.parentNode.replaceChild(frag,node);});
+  while(walker.nextNode())if(walker.currentNode.nodeValue.includes(needle))nodes.push(walker.currentNode);
+  for(const node of nodes){
+   const parts=node.nodeValue.split(needle),frag=document.createDocumentFragment();
+   parts.forEach((part,i)=>{if(part)frag.append(document.createTextNode(part));if(i<parts.length-1){const mark=document.createElement('mark');mark.className=`concept-highlight concept-highlight--${kind}`;mark.textContent=needle;frag.append(mark);}});
+   node.replaceWith(frag);
+  }
  };
  callability.querySelectorAll('li span').forEach(span=>{
   const isNo=/^(No|No matching)/.test(span.textContent.trim());
   if(isNo)span.classList.add('concept-missing');
   const icon=document.createElement('span');icon.className='concept-status-icon';icon.setAttribute('aria-hidden','true');icon.textContent=isNo?'✕':'✓';span.prepend(icon);
  });
- const clearMarks=()=>callability.closest('.case-concept').querySelectorAll('mark').forEach(mark=>mark.replaceWith(document.createTextNode(mark.textContent)));
+ const clearMarks=()=>callability.closest('.case-concept').querySelectorAll('mark.concept-highlight').forEach(mark=>mark.replaceWith(document.createTextNode(mark.textContent)));
  const render=(index,active)=>{
   clearMarks();checks.forEach(c=>c.dataset.callability='');
+  sections.forEach(section=>section.querySelectorAll('.concept-no-match').forEach(message=>message.remove()));
   if(!active)return;
   const s=scenarios[index],card=checks[index];card.dataset.callability='active';
-  const map=callability.closest('.case-concept');
-  markText(map,s.model,!s.available);
-  markText(map,s.group);
-  if(!s.subscription) markText(map,'No matching subscription');
-  else markText(map,s.subscription);
-  const result=card.querySelector('.concept-result');result.classList.toggle('concept-result--fail',!s.available||!s.subscription);
+  highlight(card.querySelector('h4'),s.group,'group');
+  highlight(card.querySelector('h4'),s.model,'model');
+  const matchingCard=(section,heading)=>[...section.querySelectorAll('.concept-map-card')].find(c=>c.querySelector('h4')?.textContent===heading);
+  highlight(matchingCard(sections[0],s.available?'Available models':'Unavailable models'),s.model,'model');
+  highlight(matchingCard(sections[1],s.group)?.querySelector('h4'),s.group,'group');
+  const markResource=(section,heading)=>{
+   if(!heading){const msg=document.createElement('p');msg.className='concept-no-match';msg.textContent=section===sections[2]?'No matching policy':'No matching subscription';section.append(msg);return;}
+   const resource=matchingCard(section,heading);
+   if(!resource)return;
+   for(const p of resource.querySelectorAll('p')){
+    highlight(p,s.group,'group');highlight(p,s.model,'model');
+   }
+  };
+  markResource(sections[2],s.policy);
+  markResource(sections[3],s.subscription);
  };
- checks.forEach((card,index)=>{const result=card.querySelector('.concept-result');const link=document.createElement('button');link.type='button';link.className='concept-link';link.textContent='Click to see relations';link.setAttribute('aria-expanded',index===0?'true':'false');result.after(link);link.addEventListener('click',()=>{const active=link.getAttribute('aria-expanded')!=='true';checks.forEach(c=>c.querySelector('.concept-link').textContent='Click to see relations');checks.forEach(c=>c.querySelector('.concept-link').setAttribute('aria-expanded','false'));link.textContent=active?'Hide highlights':'Click to see relations';link.setAttribute('aria-expanded',String(active));render(index,active);});});
+ checks.forEach((card,index)=>{const result=card.querySelector('.concept-result');result.classList.toggle('concept-result--fail',result.textContent.trim().startsWith('Not'));const link=document.createElement('button');link.type='button';link.className='concept-link';link.textContent='Click to see relations';link.setAttribute('aria-expanded',index===0?'true':'false');result.after(link);link.addEventListener('click',()=>{const active=link.getAttribute('aria-expanded')!=='true';checks.forEach(c=>c.querySelector('.concept-link').textContent='Click to see relations');checks.forEach(c=>c.querySelector('.concept-link').setAttribute('aria-expanded','false'));link.textContent=active?'Hide highlights':'Click to see relations';link.setAttribute('aria-expanded',String(active));render(index,active);});});
  render(0,true);checks[0].querySelector('.concept-link').textContent='Hide highlights';
 }
