@@ -55,13 +55,42 @@ for(const demo of document.querySelectorAll('[data-governance-demo]')){
  });
  const setRow=open=>{rowContent.hidden=!open;rowToggle.setAttribute('aria-expanded',String(open));rowToggle.setAttribute('aria-label',`${open?'Collapse':'Expand'} model details`);};
  rowToggle.addEventListener('click',()=>setRow(rowContent.hidden));
- demo.querySelector('[data-demo-reset]').addEventListener('click',()=>{
+ const reset=demo.querySelector('[data-demo-reset]');
+ if(reset&&!reset.querySelector('.demo-reset-glyph')){const glyph=document.createElement('span');glyph.className='demo-reset-glyph';glyph.setAttribute('aria-hidden','true');glyph.textContent='↻';reset.append(' ',glyph);}
+ reset.addEventListener('click',()=>{
   selected=null;manuallyOpen=new Set(cards.filter(c=>c.hasAttribute('data-initial-open')));
   for(const more of demo.querySelectorAll('[data-demo-more]')){more.setAttribute('aria-expanded','false');more.textContent=`${more.closest('[data-demo-card]').querySelectorAll('[data-extra-group]').length} more`;}
   setRow(true);render();
  });
  render();
 }
+
+const decorateImageControls=()=>{
+ for(const link of document.querySelectorAll('[data-case-image]')){
+  const control=link.querySelector(':scope > span');
+  if(control)control.classList.add('case-image-expand');
+ }
+};
+
+const mergeEvidencePair=(firstLabel,src,alt,combinedLabel,notes)=>{
+ const figure=[...document.querySelectorAll('.case-figure--evidence')].find(candidate=>candidate.querySelector('.case-evidence-label')?.textContent.trim()===firstLabel);
+ if(!figure||figure.dataset.combined==='true')return;
+ const grid=figure.querySelector('.case-evidence-grid');
+ if(!grid)return;
+ const item=document.createElement('div');item.className='case-evidence-item';
+ const label=document.createElement('p');label.className='case-evidence-label';label.textContent=combinedLabel;
+ const link=document.createElement('a');link.className='case-image-link';link.href=src;link.dataset.caseImage='';link.setAttribute('aria-label',`Enlarge: ${combinedLabel}`);
+ const image=document.createElement('img');image.src=src;image.alt=alt;image.width=4848;image.height=1307;image.loading='lazy';image.decoding='async';
+ const control=document.createElement('span');control.className='case-image-expand';control.append('Enlarge ');const glyph=document.createElement('span');glyph.className='case-expand-glyph';glyph.setAttribute('aria-hidden','true');glyph.textContent='⛶';control.append(glyph);
+ link.append(image,control);item.append(label,link);
+ const list=document.createElement('ol');list.className='case-image-notes';
+ notes.forEach((text,index)=>{const li=document.createElement('li');const number=document.createElement('span');number.className='case-note-number';number.textContent=String(index+1);const copy=document.createElement('span');copy.textContent=text;li.append(number,copy);list.append(li);});
+ item.append(list);grid.replaceChildren(item);figure.dataset.combined='true';
+};
+
+mergeEvidencePair('Before · Names hidden in the subscription table','assets/case-study/Image-026.webp','Before and after Subscription tables shown side by side.','Before and after · Subscription table',["The previous table hid group names in a small popover, constraining the space available for the list.","Compound expansion keeps group and model names visible within the table while preserving the surrounding rows."]);
+mergeEvidencePair('Before · Reconstruct access across pages','assets/case-study/Image-027.webp','Before and after access investigation views shown side by side.','Before and after · Access investigation',["Separate settings views required page switching to reconstruct access.","Models without resources were absent from the resource list.","Availability had to be checked elsewhere in the product.","The Overview brings models, subscriptions, and authorization policies into one governance area.","An expanded row explains missing subscriptions or policies while keeping the model visible.","The model status appears alongside its access settings."]);
+decorateImageControls();
 
 const imageDialog=document.querySelector('.case-image-dialog');
 if(imageDialog){
