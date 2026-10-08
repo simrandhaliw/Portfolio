@@ -108,7 +108,15 @@ combineEvidencePair('Before · Names hidden in the policy table','assets/case-st
  'The policy table uses the same expansion pattern, so administrators do not have to learn a second interaction.'
 ]);
 
-stackEvidencePair('Before · Reconstruct access across pages');
+combineEvidencePair('Before · Reconstruct access across pages','assets/case-study/Image-032.webp','Before and after · Reconstruct access across pages','Before and after access investigation screens shown vertically.',[
+ 'Separate settings views required page switching.',
+ 'A model without resources was absent from the list.',
+ 'Availability had to be checked elsewhere.',
+ 'Group and model names were hidden behind counts, making the relationship harder to trace.',
+ 'The shared governance area keeps the model, subscriptions, and authorization policies in one place.',
+ 'The model remains visible when no subscription or authorization policy is configured.',
+ 'Status and access settings can be inspected together from the model row.'
+]);
 decorateImageControls();
 
 const imageDialog=document.querySelector('.case-image-dialog');
