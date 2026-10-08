@@ -3,7 +3,7 @@
 .case-introduction h1 { max-width: 27ch; font-size: var(--size-case-title); }
 .case-introduction-deck { max-width: var(--reading-width); margin-top: var(--space-5); color: var(--color-text-secondary); }
 .case-branding { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-5); margin-top: var(--space-6); }
-.case-branding .company-logo { flex: 0 0 auto; margin: 0; width: 132px; height: auto; }
+.case-branding .company-logo { flex: 0 0 auto; margin: 0; width: 104px; height: auto; }
 .case-branding .tags { margin: 0; }
 .case-facts { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-6); margin-top: var(--space-8); padding-top: var(--space-5); border-top: 1px solid var(--color-border); font-size: var(--size-small); }
 .case-fact-team { grid-column: span 2; }
