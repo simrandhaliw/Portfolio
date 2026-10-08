@@ -136,10 +136,10 @@
 .case-media-slot--paired .case-media-slot-art { min-height: 250px; padding: var(--space-5); }
 .concept-map { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-4); }
 .concept-map-section { min-width: 0; padding: var(--space-4); border: 1px solid var(--color-border-strong); border-radius: var(--radius-media); background: var(--color-background); }
-.concept-map-section h3 { display: flex; align-items: baseline; flex-wrap: wrap; gap: var(--space-2); margin: 0 0 var(--space-4); font-size: var(--size-small); line-height: var(--line-heading); }
+.concept-map-section h3 { display: flex; align-items: baseline; flex-wrap: nowrap; gap: var(--space-2); margin: 0 0 var(--space-4); font-size: var(--size-small); line-height: var(--line-heading); }
 .concept-map-section h3 span { color: var(--color-text-muted); font-size: var(--size-caption); font-weight: var(--weight-body); }
 .concept-map-cards { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: var(--space-3); }
-.concept-map-cards--groups { grid-template-columns: repeat(2,minmax(0,1fr)); }
+.concept-map-cards--groups { grid-template-columns: repeat(3,minmax(0,1fr)); }
 .concept-map-card { min-width: 0; padding: var(--space-3); border: 1px solid var(--color-border); border-radius: var(--radius-media); background: var(--color-surface); font-size: var(--size-caption); overflow-wrap: anywhere; }
 .concept-map-card h4 { margin: 0 0 var(--space-2); font-size: var(--size-caption); line-height: 1.35; }
 .concept-map-card p + p { margin-top: var(--space-2); }
@@ -147,10 +147,17 @@
 .concept-map-card p b { color: var(--color-text-primary); font-weight: var(--weight-medium); }
 .concept-map-card ul { margin: 0; padding-left: 1.15em; }
 .concept-map-card ul + p { margin-top: var(--space-3); }
+@media (max-width: 1100px) {
+ .concept-map-section h3 { flex-wrap: wrap; }
+}
+@media (max-width: 900px) {
+ .concept-map { grid-template-columns: 1fr; }
+}
 @media (max-width: 700px) {
  .case-media-slot--paired,.concept-map { grid-template-columns: 1fr; }
  .case-media-slot--paired figcaption { grid-column: 1; }
  .concept-map-cards { grid-template-columns: 1fr; }
+ .concept-map-cards--groups { grid-template-columns: 1fr; }
  .case-media-slot-art { min-height: 220px; padding: var(--space-5); }
  .case-media-slot-art > i { height: 60px; }
  .case-media-slot-art > i:nth-of-type(2) { height: 88px; }
@@ -270,27 +277,27 @@
 }
 
 /* The original access map includes three worked callability checks. */
-.concept-callability { margin-top: var(--space-5); }
-.concept-callability > h3 { font-size: var(--size-subheading); margin-bottom: var(--space-4); }
+.concept-callability { margin-top: var(--space-4); }
+.concept-callability > h3 { font-size: var(--size-subheading); margin-bottom: var(--space-2); }
 .concept-checks { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: var(--space-3); }
 .concept-checks > .concept-map-card { display: flex; flex-direction: column; }
-.concept-checks > .concept-map-card h4 { min-height: 3em; }
-.concept-checks ol { padding-left: 1.2em; display: grid; grid-template-rows: repeat(3,minmax(5.5em,auto)); gap: var(--space-3); }
+.concept-checks > .concept-map-card h4 { margin-bottom: var(--space-2); }
+.concept-checks ol { margin: 0; padding-left: 1.2em; display: grid; gap: var(--space-2); }
 .concept-checks li span { display: block; color: var(--color-text-primary); margin-top: var(--space-1); }
-.concept-checks .concept-result { border-top: 1px solid var(--color-border); margin-top: auto; padding-top: var(--space-3); color: var(--color-text-primary); font-weight: var(--weight-medium); white-space: nowrap; }
+.concept-checks .concept-result { border-top: 1px solid var(--color-border); margin-top: var(--space-2); padding-top: var(--space-2); color: var(--color-text-primary); font-weight: var(--weight-medium); white-space: nowrap; }
 .concept-checks .concept-result::before { content: '✓'; display: inline-block; color: #2f7d45; margin-right: .4em; font-weight: var(--weight-strong); }
 .concept-checks .concept-result--fail::before { content: '✕'; color: #b42318; }
 .concept-checks [data-callability] { border-color: var(--color-border); }
 .concept-checks [data-callability="active"] { box-shadow: inset 0 0 0 2px var(--color-accent); }
 .concept-checks [data-callability="active"] .concept-result { color: var(--color-text-primary); }
 .concept-checks .concept-result--fail { color: var(--color-text-primary); }
-.concept-checks .concept-link { display: inline-flex; align-self: start; margin-top: var(--space-3); color: var(--color-accent); text-decoration: underline; text-underline-offset: .15em; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
+.concept-checks .concept-link { display: inline-flex; align-self: start; margin-top: var(--space-2); color: var(--color-accent); text-decoration: underline; text-underline-offset: .15em; background: none; border: 0; padding: 0; font: inherit; cursor: pointer; }
 .concept-checks .concept-link:hover,.concept-checks .concept-link:focus-visible { color: var(--color-accent-hover, #064b9c); }
 .concept-highlight { color: inherit; padding: 0; border-radius: .12em; }
 .concept-highlight--group { background: #cfe4fb; }
 .concept-highlight--model { background: #f9dfbb; }
 .concept-no-match { width: fit-content; max-width: 100%; margin: var(--space-5) 0 var(--space-2); color: var(--color-danger, #b42318); padding: var(--space-2) var(--space-3); border: 1px solid currentColor; border-radius: var(--radius-tag); font-size: var(--size-caption); line-height: var(--line-body); }
-.concept-section-description { margin-top: calc(-1 * var(--space-3)); margin-bottom: var(--space-4); color: var(--color-text-muted); font-size: var(--size-caption); }
+.concept-section-description { color: var(--color-text-muted); font-size: var(--size-caption); font-weight: var(--weight-body); }
 .concept-checks .concept-missing { color: var(--color-danger, #b42318); }
 .concept-status-icon { display: inline-block; margin-right: .35em; font-weight: var(--weight-strong); color: #2f7d45; }
 .concept-checks li span.concept-status-icon { display: inline; margin-top: 0; }
