@@ -117,6 +117,10 @@ combineEvidencePair('Before · Reconstruct access across pages','assets/case-stu
  'The model remains visible when no subscription or authorization policy is configured.',
  'Status and access settings can be inspected together from the model row.'
 ]);
+// Give every annotated image the same image-and-notes layout, including standalone examples.
+for(const figure of document.querySelectorAll('.case-figure--evidence')){
+ if(figure.querySelector('.case-image-notes'))stackEvidencePair(figure.querySelector('.case-evidence-label')?.textContent.trim());
+}
 decorateImageControls();
 
 const imageDialog=document.querySelector('.case-image-dialog');
