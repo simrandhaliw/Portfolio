@@ -298,10 +298,10 @@
 .concept-highlight--model { background: #f9dfbb; }
 .concept-no-match { width: fit-content; max-width: 100%; margin: var(--space-5) 0 var(--space-2); color: var(--color-danger, #b42318); padding: var(--space-2) var(--space-3); border: 1px solid currentColor; border-radius: var(--radius-tag); font-size: var(--size-caption); line-height: var(--line-body); }
 .concept-section-description { color: var(--color-text-muted); font-size: var(--size-caption); font-weight: var(--weight-body); }
-.concept-checks .concept-missing { color: var(--color-danger, #b42318); }
+.concept-checks .concept-missing { color: inherit; }
 .concept-status-icon { display: inline-block; margin-right: .35em; font-weight: var(--weight-strong); color: #2f7d45; }
 .concept-checks li span.concept-status-icon { display: inline; margin-top: 0; }
-.concept-missing .concept-status-icon { color: var(--color-danger, #b42318); }
+.concept-missing .concept-status-icon { color: #2f7d45; }
 .case-figure--evidence { padding: 0; border: 0; background: transparent; }
 .case-figure--evidence .case-evidence-item video { aspect-ratio: auto; }
 .case-evidence-grid > .case-evidence-item + .case-evidence-item { margin-top: var(--space-3); }
