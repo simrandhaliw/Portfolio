@@ -144,6 +144,7 @@ if(callability){
   highlight(card.querySelector('h4'),s.model,'model');
   const matchingCard=(section,heading)=>[...section.querySelectorAll('.concept-map-card')].find(c=>c.querySelector('h4')?.textContent===heading);
   highlight(matchingCard(sections[0],s.available?'Available models':'Unavailable models'),s.model,'model');
+  if(!s.available){const msg=document.createElement('p');msg.className='concept-no-match';msg.textContent='Model unavailable';sections[0].append(msg);}
   highlight(matchingCard(sections[1],s.group)?.querySelector('h4'),s.group,'group');
   const markResource=(section,heading)=>{
    if(!heading){const msg=document.createElement('p');msg.className='concept-no-match';msg.textContent=section===sections[2]?'No matching policy':'No matching subscription';section.append(msg);return;}
