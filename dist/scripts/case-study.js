@@ -82,7 +82,32 @@ const stackEvidencePair=firstLabel=>{
  figure.dataset.stacked='true';
 };
 
-stackEvidencePair('Before · Names hidden in the subscription table');
+const combineEvidencePair=(firstLabel,src,combinedLabel,alt,notes)=>{
+ const figure=[...document.querySelectorAll('.case-figure--evidence')].find(candidate=>candidate.querySelector('.case-evidence-label')?.textContent.trim()===firstLabel);
+ if(!figure||figure.dataset.combined==='true')return;
+ const grid=figure.querySelector('.case-evidence-grid');
+ const items=[...grid.querySelectorAll(':scope > .case-evidence-item')];
+ if(!grid||items.length<2)return;
+ const item=document.createElement('div');item.className='case-evidence-item case-evidence-item--problem';
+ const label=document.createElement('p');label.className='case-evidence-label';label.textContent=combinedLabel;
+ const link=document.createElement('a');link.className='case-image-link';link.href=src;link.dataset.caseImage='';link.setAttribute('aria-label',`Enlarge: ${combinedLabel}`);
+ const image=document.createElement('img');image.src=src;image.alt=alt;image.width=2400;image.height=2670;image.loading='lazy';image.decoding='async';
+ const control=document.createElement('span');control.className='case-image-expand';control.append('Enlarge ');const glyph=document.createElement('span');glyph.className='case-expand-glyph';glyph.setAttribute('aria-hidden','true');glyph.textContent='⛶';control.append(glyph);
+ link.append(image,control);item.append(label,link);
+ const list=document.createElement('ol');list.className='case-image-notes';
+ notes.forEach((text,index)=>{const li=document.createElement('li');const number=document.createElement('span');number.className='case-note-number';number.textContent=String(index+1);const copy=document.createElement('span');copy.textContent=text;li.append(number,copy);list.append(li);});
+ item.append(list);grid.classList.remove('case-evidence-grid--paired');grid.classList.add('case-evidence-grid--problem');grid.replaceChildren(item);figure.dataset.combined='true';
+};
+
+combineEvidencePair('Before · Names hidden in the subscription table','assets/case-study/Image-028.webp','Before and after · Subscription table','Before and after Subscription tables shown vertically.',[
+ 'The small popover constrained the space available for a group or model list.',
+ 'Compound expansion gives the list a full-width area while keeping the surrounding rows visible.'
+]);
+combineEvidencePair('Before · Names hidden in the policy table','assets/case-study/Image-029.webp','Before and after · Authorization Policy table','Before and after Authorization Policy tables shown vertically.',[
+ 'Policy groups also required a separate popover.',
+ 'The policy table uses the same expansion pattern, so administrators do not have to learn a second interaction.'
+]);
+
 stackEvidencePair('Before · Reconstruct access across pages');
 decorateImageControls();
 
