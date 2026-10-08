@@ -328,15 +328,6 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 .resume-heading { display: flex; align-items: center; justify-content: space-between; gap: var(--space-7); }
 .resume-heading .resume-actions { margin-top: 0; }
 .resume-note { margin-top: var(--space-5); max-width: var(--reading-width); }
-.resume-preview { max-width: 840px; margin: var(--space-8) auto 0; padding: clamp(12px,3vw,40px); background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-media); }
-.resume-preview a { display: block; }
-.resume-preview img { display: block; width: 100%; height: auto; background: white; }
-.resume-preview figcaption { margin-top: var(--space-4); text-align: center; }
-.resume-transcript { max-width: 840px; margin: var(--space-7) auto var(--space-10); border-top: 1px solid var(--color-border); }
-.resume-transcript summary { width: fit-content; min-height: 44px; display: flex; align-items: center; cursor: pointer; color: var(--color-link); font-weight: var(--weight-medium); }
-.resume-transcript[open] summary { margin-bottom: var(--space-4); }
-.resume-transcript .prose { font-size: var(--size-small); }
-.resume-transcript h2,.resume-transcript h3,.resume-transcript h4 { margin-top: var(--space-6); }
 @media(max-width:1100px) { .planet-card-copy { padding-inline: var(--space-5); } }
 @media(max-width:850px) { .header-actions { gap: var(--space-5); } .gallery-heading { grid-template-columns: 1fr; gap: var(--space-5); } .resume-heading { display: block; } .resume-heading .resume-actions { margin-top: var(--space-5); } }
 @media(max-width:700px) {
