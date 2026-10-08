@@ -72,24 +72,18 @@ const decorateImageControls=()=>{
  }
 };
 
-const mergeEvidencePair=(firstLabel,src,alt,combinedLabel,notes)=>{
+const stackEvidencePair=firstLabel=>{
  const figure=[...document.querySelectorAll('.case-figure--evidence')].find(candidate=>candidate.querySelector('.case-evidence-label')?.textContent.trim()===firstLabel);
- if(!figure||figure.dataset.combined==='true')return;
+ if(!figure||figure.dataset.stacked==='true')return;
  const grid=figure.querySelector('.case-evidence-grid');
  if(!grid)return;
- const item=document.createElement('div');item.className='case-evidence-item';
- const label=document.createElement('p');label.className='case-evidence-label';label.textContent=combinedLabel;
- const link=document.createElement('a');link.className='case-image-link';link.href=src;link.dataset.caseImage='';link.setAttribute('aria-label',`Enlarge: ${combinedLabel}`);
- const image=document.createElement('img');image.src=src;image.alt=alt;image.width=4848;image.height=1307;image.loading='lazy';image.decoding='async';
- const control=document.createElement('span');control.className='case-image-expand';control.append('Enlarge ');const glyph=document.createElement('span');glyph.className='case-expand-glyph';glyph.setAttribute('aria-hidden','true');glyph.textContent='⛶';control.append(glyph);
- link.append(image,control);item.append(label,link);
- const list=document.createElement('ol');list.className='case-image-notes';
- notes.forEach((text,index)=>{const li=document.createElement('li');const number=document.createElement('span');number.className='case-note-number';number.textContent=String(index+1);const copy=document.createElement('span');copy.textContent=text;li.append(number,copy);list.append(li);});
- item.append(list);grid.replaceChildren(item);figure.dataset.combined='true';
+ grid.classList.remove('case-evidence-grid--paired');grid.classList.add('case-evidence-grid--problem');
+ grid.querySelectorAll(':scope > .case-evidence-item').forEach(item=>item.classList.add('case-evidence-item--problem'));
+ figure.dataset.stacked='true';
 };
 
-mergeEvidencePair('Before · Names hidden in the subscription table','assets/case-study/Image-026.webp','Before and after Subscription tables shown side by side.','Before and after · Subscription table',["The previous table hid group names in a small popover, constraining the space available for the list.","Compound expansion keeps group and model names visible within the table while preserving the surrounding rows."]);
-mergeEvidencePair('Before · Reconstruct access across pages','assets/case-study/Image-027.webp','Before and after access investigation views shown side by side.','Before and after · Access investigation',["Separate settings views required page switching to reconstruct access.","Models without resources were absent from the resource list.","Availability had to be checked elsewhere in the product.","The Overview brings models, subscriptions, and authorization policies into one governance area.","An expanded row explains missing subscriptions or policies while keeping the model visible.","The model status appears alongside its access settings."]);
+stackEvidencePair('Before · Names hidden in the subscription table');
+stackEvidencePair('Before · Reconstruct access across pages');
 decorateImageControls();
 
 const imageDialog=document.querySelector('.case-image-dialog');

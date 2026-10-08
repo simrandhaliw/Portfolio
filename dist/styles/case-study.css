@@ -202,6 +202,7 @@
 .case-image-legend .case-image-notes { gap: var(--space-5); margin: 0; }
 .case-image-legend .case-evidence-description { margin: 0; }
 .case-chapter#outcome > .case-figure--evidence:last-of-type .case-evidence-grid { grid-template-columns: 1fr; }
+#decisions .case-evidence-grid--paired:has(video) { grid-template-columns: 1fr; }
 
 /* The portfolio excerpt preserves the prototype's two lanes and clickable labels. */
 .case-demo-figure { padding: 0; border: 0; border-radius: 0; background: transparent; }
