@@ -179,6 +179,8 @@
 /* Project evidence uses its natural proportions and opens at a readable size. */
 .case-evidence-grid { display: grid; gap: var(--space-5); }
 .case-evidence-grid--paired { grid-template-columns: repeat(2,minmax(0,1fr)); align-items: start; }
+.case-evidence-grid--equal-image-height .case-image-link { aspect-ratio: 16 / 9; overflow: hidden; display: grid; place-items: center; background: var(--color-evidence-canvas); }
+.case-evidence-grid--equal-image-height .case-image-link img { width: 100%; height: 100%; object-fit: contain; }
 .case-evidence-grid:has(video) { gap: var(--space-7); }
 .case-evidence-item { min-width: 0; }
 .case-evidence-label { font-size: var(--size-caption); font-weight: var(--weight-strong); margin-bottom: var(--space-3); color: var(--color-text-secondary); }
