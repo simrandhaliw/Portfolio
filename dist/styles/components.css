@@ -95,7 +95,6 @@
 .about-story-copy > p:nth-child(3) { color: var(--color-text-primary); font-weight: var(--weight-medium); }
 .personal-quote { margin-top: var(--space-7) !important; padding: var(--space-6) 0 0 !important; border-left: 0 !important; border-top: var(--border-width) solid var(--color-border); }
 .personal-quote p,.reference blockquote { font-family: var(--font-body); font-size: var(--size-quote); font-weight: var(--weight-medium); color: var(--color-text-primary); line-height: var(--line-quote); letter-spacing: var(--tracking-opening); }
-.about-quote { max-width: 48rem; }
 .personal-quote cite { display: block; margin-top: var(--space-3); font-size: var(--size-caption); font-style: normal; color: var(--color-text-muted); }
 .editorial-section { display: block; }
 .editorial-heading,.outside-heading { padding-top: var(--space-5); border-top: var(--border-width) solid var(--color-border); margin-bottom: var(--space-6); }
@@ -289,7 +288,17 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 .story-row--reverse .story-copy { grid-column: 2; }
 .story-art { max-width: 380px; width: 100%; justify-self: end; }
 .story-row--reverse .story-art { justify-self: start; }
-.about-quote { max-width: 35rem; margin: var(--space-9) auto 0 !important; padding-block: var(--space-6) 0 !important; }
+.about-quote { max-width: none; margin: var(--space-9) 0 0 !important; padding-block: var(--space-6) !important; border-bottom: var(--border-width) solid var(--color-border); }
+.about-quote p { font-size: clamp(1.125rem, 1.65vw, 1.5rem); }
+.about-feature { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); gap: var(--gap-column); align-items: center; margin-top: var(--space-7); }
+.about-feature-image { display: block; width: 100%; height: auto; border-radius: var(--radius-media); }
+.about-feature-copy > p { margin: 0; }
+.about-feature-copy > .action-link { margin-top: var(--space-5); }
+.about-feature .action-arrow { flex-shrink: 0; }
+@media (max-width: 700px) {
+ .about-feature { grid-template-columns: minmax(0, 1fr); gap: var(--space-6); }
+ .about-feature-image { max-width: 440px; justify-self: center; }
+}
 .approach-sections { margin-top: var(--space-9); }
 .approach-sections .editorial-section + .editorial-section { margin-top: var(--space-9); }
 .outside-section .editorial-copy { display: grid; grid-template-columns: minmax(0,1.55fr) minmax(0,1fr); gap: var(--gap-column); align-items: start; max-width: none; }
