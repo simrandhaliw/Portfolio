@@ -18,3 +18,6 @@ strong { font-weight: var(--weight-strong); }
 .prose h3 { margin-top: var(--space-8); }
 .prose ul,.prose ol { padding-left: var(--space-5); }
 .prose blockquote { border-left: 2px solid var(--color-border-strong); padding-left: var(--space-5); margin-block: var(--space-6); }
+
+/* Distinct heading levels share the same scale across the site. */
+h4 { font-size: var(--size-minor-heading); }

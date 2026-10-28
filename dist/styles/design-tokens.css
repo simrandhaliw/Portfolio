@@ -60,11 +60,12 @@
   --size-brand: 28px;
   --size-opening: clamp(1.375rem, 1.8vw, 1.5rem);
   --size-hero: var(--size-opening);
-  --size-project-title: var(--size-opening);
-  --size-title: clamp(1.75rem, 2.4vw, 2rem);
+  --size-project-title: var(--size-heading);
+  --size-title: clamp(2rem, 3.5vw, 3rem);
   --size-case-title: var(--size-title);
-  --size-heading: clamp(1.375rem, 1.8vw, 1.5rem);
-  --size-subheading: 1.25rem;
+  --size-heading: clamp(1.625rem, 2.4vw, 2rem);
+  --size-subheading: clamp(1.25rem, 1.8vw, 1.5rem);
+  --size-minor-heading: 1.125rem;
   --size-intro: var(--size-subheading);
   --size-quote: var(--size-opening);
   --size-reference-quote: clamp(1.25rem, 1.6vw, 1.375rem);

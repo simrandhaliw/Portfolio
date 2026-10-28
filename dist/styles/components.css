@@ -424,3 +424,13 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
  .home-intro .hero-panels > .hero-panel { align-self: start; row-gap: var(--space-6); }
  .home-intro .hero-portrait { max-width: none; width: 100%; padding-top: 0; justify-self: stretch; }
 }
+
+/* Bound the image offset when longer copy wraps beside it on narrower screens. */
+@media (min-width: 701px) {
+ .home-intro .hero-portrait,
+ .story-row .story-art,
+ .about-feature > .media {
+  align-self: start;
+  margin-top: clamp(0px, calc((100vw - 700px) * .04), 24px);
+ }
+}
