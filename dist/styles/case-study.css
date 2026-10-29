@@ -537,3 +537,14 @@ html.case-image-open { overflow: hidden; }
  .case-chapter > .case-copy + .case-copy:has(> :is(h3,h4):first-child) { margin-top: var(--space-6); }
  .case-chapter > .case-figure + .case-copy { margin-top: var(--space-6); }
 }
+
+/* Earlier work uses the same chapter and evidence components as the recent projects. */
+.earlier-hero { overflow: hidden; border-radius: var(--radius-media); }
+.earlier-hero img { display: block; width: 100%; height: auto; }
+.earlier-hero .project-hero-theme--dark { display: none; }
+[data-theme="dark"] .earlier-hero .project-hero-theme--light { display: none; }
+[data-theme="dark"] .earlier-hero .project-hero-theme--dark { display: block; }
+.case-study--earlier .case-evidence-label { margin: 0 0 var(--space-3); }
+.case-study--earlier .case-caption { margin-top: var(--space-3); font-size: var(--size-caption); color: var(--color-text-muted); }
+.earlier-mobile-figure .case-image-link { background: var(--color-surface); padding: var(--space-5); }
+.earlier-mobile-figure .case-image-link img { width: auto; max-width: 100%; height: auto; max-height: 660px; margin-inline: auto; object-fit: contain; }

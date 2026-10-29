@@ -434,3 +434,30 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
   margin-top: clamp(0px, calc((100vw - 700px) * .04), 24px);
  }
 }
+
+/* Seven projects share a two-column editorial grid; each card stacks its image and copy. */
+.home-page .project-list { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: auto; gap: var(--space-10) var(--space-7); align-items: stretch; }
+.home-page .project { display: flex; flex-direction: column; gap: var(--space-5); min-width: 0; }
+.home-page .project > .project-visual,
+.home-page .project > .media { width: 100%; aspect-ratio: 14 / 9; height: auto; flex: none; }
+.home-page .project-visual::before { aspect-ratio: 14 / 9; }
+.home-page .project > .media { margin: 0; }
+.home-page .project-body { align-self: stretch; margin: 0; display: flex; flex-direction: column; flex: 1; }
+.home-page .project-company { margin-bottom: var(--space-4); }
+.home-page .project h3 { font-size: var(--size-subheading); }
+.home-page .project-action { margin-top: auto; padding-top: var(--space-5); }
+.home-page .project .tags { margin-block: var(--space-3) var(--space-4); }
+.earlier-project-media { padding: 0; background: var(--color-surface); }
+@media (max-width: 800px) {
+ .home-page .project-list { grid-template-columns: minmax(0,1fr); gap: var(--space-9); }
+}
+
+/* Every organization occupies the same logo slot, regardless of its proportions. */
+.home-page .project-company { height: 48px; min-height: 48px; }
+.home-page .company-logo-pair { width: 136px; height: 48px; align-items: center; }
+.home-page .company-logo-pair .company-logo { width: 136px; height: 48px; margin: 0; object-fit: contain; object-position: left center; }
+.case-coming-soon { color: var(--color-text-muted); font-size: var(--size-action); }
+.resume-org-logo-pair { display: block; width: 48px; height: 48px; flex: 0 0 48px; }
+.organization-logo--dark { display: none; }
+[data-theme="dark"] .organization-logo--light { display: none; }
+[data-theme="dark"] .organization-logo--dark { display: block; }

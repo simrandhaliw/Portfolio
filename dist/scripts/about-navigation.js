@@ -30,7 +30,7 @@
    if(!response.ok)throw new Error('Page unavailable');
    const page=new DOMParser().parseFromString(await response.text(),'text/html');
    if(!page.querySelector('.about-content'))throw new Error('Missing section');
-   await warmVisibleImages(page,url);
+   void warmVisibleImages(page,url);
    return page;
   }).catch(error=>{cache.delete(url);throw error;}));
   return cache.get(url);
