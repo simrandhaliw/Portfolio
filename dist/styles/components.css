@@ -444,7 +444,8 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 .home-page .project-body { align-self: stretch; margin: 0; display: flex; flex-direction: column; flex: 1; }
 .home-page .project-company { margin-bottom: var(--space-4); }
 .home-page .project h3 { font-size: var(--size-subheading); }
-.home-page .project-action { margin-top: auto; padding-top: var(--space-5); }
+.home-page .project-action { margin-top: auto; padding-top: var(--space-5); display: flex; align-items: center; }
+.home-page .project-action > .case-coming-soon { display: inline-flex; align-items: center; min-height: var(--control-height); font-family: var(--font-ui); line-height: 1.5; }
 .home-page .project .tags { margin-block: var(--space-3) var(--space-4); }
 .earlier-project-media { padding: 0; background: var(--color-surface); }
 @media (max-width: 800px) {
