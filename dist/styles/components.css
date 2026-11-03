@@ -418,7 +418,7 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
  .home-intro .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); align-items: start; }
  .home-intro .hero-panels > .hero-panel { align-self: stretch; }
  .home-intro .hero-copy { max-width: none; align-self: start; }
- .home-intro .hero-portrait { max-width: 320px; padding-top: 0; }
+ .home-intro .hero-portrait { max-width: 320px; padding-top: 0; margin-top: 0; align-self: start; }
 }
 @media (max-width: 700px) {
  .home-intro .hero-panels > .hero-panel { align-self: start; row-gap: var(--space-6); }
@@ -427,7 +427,6 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 
 /* Bound the image offset when longer copy wraps beside it on narrower screens. */
 @media (min-width: 701px) {
- .home-intro .hero-portrait,
  .story-row .story-art,
  .about-feature > .media {
   align-self: start;
