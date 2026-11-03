@@ -415,7 +415,7 @@ tbody th[scope="row"] { font-size: var(--size-small); font-weight: var(--weight-
 /* Keep tab content anchored while balancing text and artwork. */
 .home-intro > .horizontal-region--nav, .home-intro > .selector-row { margin-bottom: var(--space-5); }
 @media (min-width: 701px) {
- .home-intro .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); align-items: center; }
+ .home-intro .hero-layout { grid-template-columns: minmax(0, 1fr) minmax(240px, 320px); align-items: start; }
  .home-intro .hero-panels > .hero-panel { align-self: stretch; }
  .home-intro .hero-copy { max-width: none; align-self: start; }
  .home-intro .hero-portrait { max-width: 320px; padding-top: 0; }
